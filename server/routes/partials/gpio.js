@@ -48,6 +48,15 @@
                 });
             }
 
+            if (optionSelected === 'special') {
+
+                color0.writeSync(1);
+                color1.writeSync(1);
+                color2.writeSync(1);
+
+                return res.status(200).send('all lights on');
+            }
+
 
 
         });
