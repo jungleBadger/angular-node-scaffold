@@ -26,14 +26,14 @@
             optionSelected = req.body.selectedLight;
             console.log(optionSelected);
 
-            if (optionSelected === 1) {
+            if (optionSelected === '1') {
                 handleSwitches(color1, color2);
                 color0.writeSync(1, function () {
                     res.status(200).send("Switch 0 turned on");
                 });
             }
 
-            if (optionSelected === 2) {
+            if (optionSelected === '2') {
                 handleSwitches(color0, color2);
                 color1.writeSync(1, function () {
                     res.status(200).send("Switch 1 turned on");
@@ -41,7 +41,7 @@
             }
 
 
-            if (optionSelected === 3) {
+            if (optionSelected === '3') {
                 handleSwitches(color0, color1);
                 color2.writeSync(1, function () {
                     res.status(200).send("Switch 2 turned on");
