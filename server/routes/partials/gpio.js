@@ -11,7 +11,7 @@
     module.exports = function (app) {
 
         app.post('/testLight', function (req, res) {
-            color[0].write(1, function () {
+            color[req.body.selected].write(Number(req.body.status), function () {
                 return res.status(200).send([req.body.selected, 'to', req.body.status].join(' '));
             })
         });
