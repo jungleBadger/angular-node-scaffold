@@ -11,6 +11,7 @@
         optionSelected;
 
     function handleSwitches(switch1, switch2) {
+        console.log('here');
         try {
             switch1.writeSync(0);
             switch2.writeSync(0);
@@ -27,26 +28,26 @@
 
             if (optionSelected === 1) {
                 handleSwitches(color1, color2);
-                return color0.writeSync(1, function () {
-                    return res.status(200).send("Switch 0 turned on");
+                color0.writeSync(1, function () {
+                    res.status(200).send("Switch 0 turned on");
                 });
             }
 
             if (optionSelected === 2) {
                 handleSwitches(color0, color2);
                 color1.writeSync(1, function () {
-                    return res.status(200).send("Switch 1 turned on");
+                    res.status(200).send("Switch 1 turned on");
                 });
             }
 
 
             if (optionSelected === 3) {
                 handleSwitches(color0, color1);
-                return color2.writeSync(1, function () {
-                    return res.status(200).send("Switch 2 turned on");
+                color2.writeSync(1, function () {
+                    res.status(200).send("Switch 2 turned on");
                 });
             }
-            
+
 
 
         });
