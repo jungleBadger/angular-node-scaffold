@@ -22,6 +22,12 @@
 
     module.exports = function (app) {
 
+        app.post('/testLight', function (req, res) {
+            color[req.body.selected].write(req.body.status, function () {
+                return res.status(200).send([req.body.selected, 'to', req.body.status].join(' '));
+            })
+        });
+
         app.post('/changeLightState', function (req, res) {
             optionSelected = req.body.selectedLight;
             console.log(optionSelected);
