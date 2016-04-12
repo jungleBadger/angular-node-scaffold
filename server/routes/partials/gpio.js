@@ -28,8 +28,9 @@
 
             if (optionSelected === '1') {
                 handleSwitches(color1, color2);
-                color0.writeSync(1, function () {
-                    res.status(200).send("Switch 0 turned on");
+                return color0.writeSync(1, function () {
+                    console.log('tatata');
+                    return res.status(200).send("Switch 0 turned on");
                 });
             }
 
@@ -43,8 +44,9 @@
 
             if (optionSelected === '3') {
                 handleSwitches(color0, color1);
-                color2.writeSync(1, function () {
-                    res.status(200).send("Switch 2 turned on");
+                return color2.writeSync(1, function () {
+                    console.log('tatata3');
+                    return res.status(200).send("Switch 2 turned on");
                 });
             }
 
