@@ -6,7 +6,7 @@
     'use strict';
     var Gpio = require('onoff').Gpio,
 
-        color = [new Gpio(18, 'out'), new Gpio(6, 'out'), new Gpio(5, 'out')];
+        color = [new Gpio(18, 'out'), new Gpio(6, 'out'), new Gpio(5, 'out'), new Gpio(23, 'out')];
 
     module.exports = function (app) {
 
